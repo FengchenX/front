@@ -5,7 +5,7 @@ import axios from 'axios'
 /**************************************************************/
 export const topApi = {
 	list() {
-		return axios.get(url.top).then((response) => {
+		return axios.get(url.top+'/frees').then((response) => {
 			return response.data
 		})
 	}

@@ -10,6 +10,10 @@ import promoteStore from './modules/promoteStore'
 import liveStore from './modules/liveStore'
 import contentStore from './modules/contentStore'
 
+/***********************************************************/
+import topStore from './modules/topStore'
+/***********************************************************/
+
 const state = {
 	requesting: false,
 	error: {}
@@ -28,6 +32,9 @@ export default new Vuex.Store({
 		rankStore,
 		promoteStore,
 		liveStore,
-		contentStore
+		contentStore,
+		/******************************************/
+		topStore
+		/******************************************/
 	}
 })

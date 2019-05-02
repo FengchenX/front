@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<el-row :gutter="20">
-			<el-col :span="6" v-for="video in videos">
+			<el-col :span="6" v-for="video in toplist">
         <div class="grid-content bg-purple">
           <VideoItem :video=video></VideoItem>
         </div>
