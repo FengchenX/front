@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-<!--    <TopContainer></TopContainer>-->
-<!--    <BHeader></BHeader>-->
-<!--    <BContent :rows="rows"></BContent>-->
-<!--    <BNavSide :options="options" v-on:change="isShowMask"></BNavSide>-->
-<!--    <div class="wnd-mask" ref="mask" v-show="showMask"></div>-->
     <el-container>
       <el-header>
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
@@ -13,11 +8,9 @@
         </el-menu>
       </el-header>
 
-
       <el-main style="height:calc(100vh - 120px);">
         <router-view></router-view>
       </el-main>
-
       
       <el-footer>
         Footer
