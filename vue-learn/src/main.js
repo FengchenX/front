@@ -6,12 +6,15 @@ import VueLazyload from 'vue-lazyload'
 
 // import iView from 'iview';
 // import 'iview/dist/styles/iview.css';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-Vue.use(VueLazyload)
+import Vuex from 'vuex'
+
+Vue.use(VueLazyload);
 // Vue.use(iView);
 Vue.use(ElementUI);
+Vue.use(Vuex);
 
 import store from './store'
 import router from './router'

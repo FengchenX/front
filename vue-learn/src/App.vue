@@ -7,24 +7,15 @@
 <!--    <div class="wnd-mask" ref="mask" v-show="showMask"></div>-->
     <el-container>
       <el-header>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" text-color="#303133" router>
-          <el-menu-item index="/home" >主页</el-menu-item>
-          <el-menu-item index="/document">文档</el-menu-item>
-          <el-menu-item index="/about">关于我</el-menu-item>
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
+                 @select="handleSelect" text-color="#303133" :router="true">
+          <el-menu-item v-for="menu in menus" :index="menu.path">{{ menu.label }}</el-menu-item>
         </el-menu>
       </el-header>
 
 
-      <el-main>
-        <el-row :gutter="20">
-          <el-col :span="4"><div class="grid-content bg-both-sides"></div></el-col>
-          <el-col :span="16">
-            <div class="grid-content bg-purple">
-              <router-view></router-view>
-            </div>
-          </el-col>
-          <el-col :span="4"><div class="grid-content bg-both-sides"></div></el-col>
-        </el-row>
+      <el-main style="height:calc(100vh - 120px);">
+        <router-view></router-view>
       </el-main>
 
       
@@ -37,11 +28,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
+
+var conf = require('config/conf')
+
 export default {
+  name: 'app',
   data() {
     return {
       activeIndex: '/home',
-      activeIndex2: '/home'
+      // activeIndex2: '/home',
+      menus: conf.menus
     };
   },
   methods: {
@@ -74,6 +70,7 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
+    height: 100%;
   }
   
   body > .el-container {
@@ -101,9 +98,6 @@ export default {
   .bg-purple-dark {
     background: #99a9bf;
   }
-  /* .bg-both-sides {
-
-  } */
   .bg-purple {
     background: #d3dce6;
   }

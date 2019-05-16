@@ -11,6 +11,42 @@ export const topApi = {
 	}
 }
 
+export const movieApi = {
+  addMovie(param) {
+    return axios.post(url.movie, param).then((response) => {
+      return response.data
+    })
+  },
+  getMovies(params) {
+    return axios.get(url.movie, {params}).then((res)=>{
+      return res.data
+    })
+  },
+  addMV(mv){
+    return axios.post(`${url.movie}/${mv.movie_id}/videos`, mv).then((res)=>{
+      return res.data
+    })
+  },
+  getMVs(args){
+    let {movie_id, params} = args
+    return axios.get(`${url.movie}/${movie_id}/videos`, {params}).then((res)=>{
+      return res.data
+    })
+  }
+}
+export const videoApi = {
+  list(params) {
+    return axios.get(url.video, {params}).then((response) => {
+      return response.data
+    })
+  },
+  getVideo(id){
+    return axios.get(`${url.video}/${id}`).then((response) => {
+      return response.data
+    })
+  }
+}
+
 /**************************************************************/
 
 //获取轮播图

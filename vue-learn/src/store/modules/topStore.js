@@ -31,7 +31,7 @@ const mutations = {
 		// state.toplist = toplist.data
 	
 		console.log(res);
-		state.toplist = res.Data.rows;
+		state.toplist = res.data.rows;
 	},
 	[TYPE.TOP_LIST_FAILURE] (state) {
 

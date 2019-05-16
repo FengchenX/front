@@ -29,7 +29,7 @@ const mutations = {
 	},
 	[TYPE.BANNER_LIST_SUCCESS] (state, bannerlist) {
 		// state.bannerlist = bannerlist.data
-		state.bannerlist = bannerlist.Data.data
+		state.bannerlist = bannerlist.data.data
 	},
 	[TYPE.BANNER_LIST_FAILURE] (state) {
 
