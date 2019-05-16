@@ -11,7 +11,7 @@
       <el-main style="height:calc(100vh - 120px);">
         <router-view></router-view>
       </el-main>
-      
+
       <el-footer>
         Footer
       </el-footer>

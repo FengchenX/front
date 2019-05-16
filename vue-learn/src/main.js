@@ -4,15 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import VueLazyload from 'vue-lazyload'
 
-// import iView from 'iview';
-// import 'iview/dist/styles/iview.css';
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import Vuex from 'vuex'
 
 Vue.use(VueLazyload);
-// Vue.use(iView);
 Vue.use(ElementUI);
 Vue.use(Vuex);
 
