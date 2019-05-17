@@ -10,7 +10,7 @@ import operation from 'components/operation/operation'
 import VideoUp from  'components/operation/VideoUp'
 import OperateContent from  'components/operation/OperateContent'
 import Movie from 'components/operation/Movie'
-import player from "../components/common/player";
+import Player from "../components/common/Player";
 
 let router = new VueRouter({
     mode: 'history',
@@ -29,7 +29,7 @@ let router = new VueRouter({
       },
       {
         path: '/player',
-        component: player
+        component: Player
       },
       {
         path: '/operation',

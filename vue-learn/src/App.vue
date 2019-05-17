@@ -14,6 +14,7 @@
 
       <el-footer>
         Footer
+        <el-button v-on:click="testClick">test player</el-button>
       </el-footer>
     </el-container>
   </div>
@@ -36,6 +37,9 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    testClick() {
+      window.open("/player", '_blank');
     }
   }
 }
@@ -64,6 +68,7 @@ export default {
     text-align: center;
     line-height: 160px;
     height: 100%;
+    padding: 0px;
   }
   
   body > .el-container {
