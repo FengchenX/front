@@ -8,18 +8,8 @@
       </el-col>
 
       <el-col :span="20">
-<!--        <div class="grid-content bg-purple">-->
-<!--          <el-row :gutter="20">-->
-<!--            <el-col :span="6" v-for="app in items">-->
-<!--              <div class="grid-content bg-purple">-->
-<!--                <OperateItem :item=app></OperateItem>-->
-<!--              </div>-->
-<!--            </el-col>-->
-<!--          </el-row>-->
-<!--        </div>-->
         <router-view></router-view>
       </el-col>
-
     </el-row>
 	</div>
 </template>
@@ -43,16 +33,6 @@ export default {
     OperateItem,
     OperateLeft,
   },
-  // computed: {
-	// 	...mapGetters([
-	// 		'requesting',
-	// 		'error',
-	// 		'toplist'
-	// 	])
-  // },
-  // mounted(){
-  //   this.$store.dispatch('toplist')
-  // }
 }
 
 </script>
@@ -60,5 +40,6 @@ export default {
 <style scoped>
   .grid-content {
     border-radius: 4px;
+    padding: 20px;
   }
 </style>
