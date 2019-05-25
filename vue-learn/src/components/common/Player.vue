@@ -14,7 +14,10 @@
 
 <script>
     export default {
-        name: "Player"
+        name: "Player",
+      created() {
+          console.log(this.$route)
+      }
     }
 </script>
 

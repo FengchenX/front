@@ -39,7 +39,13 @@ export default {
       console.log(key, keyPath);
     },
     testClick() {
-      window.open("/player", '_blank');
+      // window.open("/player", '_blank');
+      // let url = 'test'
+      // this.$router.push({path: '/player', query: {url}}, '_blank')
+
+      let routeData = this.$router.resolve({path: '/player', query: {video:'/file/go/a.txt'}});
+
+      window.open(routeData.href, '_blank');
     }
   }
 }

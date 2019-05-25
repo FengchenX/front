@@ -47,8 +47,8 @@ export default {
         // a.meta
         await this.$store.dispatch('getVideo', a.meta).then(()=>{});
         let url = this.$store.state.videoStore.video.url.replace("File:/videos", "fileApi/files/static/videos")
-        window.open(url, "_blank")
-        // window.open('/player', "_blank")
+        let routeData = this.$router.resolve({path: '/player', query: {video:url}});
+        window.open(routeData.href, '_blank');
       }
     }
   }
