@@ -11,6 +11,7 @@ import VideoUp from  'components/operation/VideoUp'
 import OperateContent from  'components/operation/OperateContent'
 import Movie from 'components/operation/Movie'
 import Player from "../components/common/Player";
+import Login from "../components/user/Login";
 
 let router = new VueRouter({
     mode: 'history',
@@ -45,10 +46,10 @@ let router = new VueRouter({
           component: Movie
         }]
       },
-      // {
-      //   path: '/upload-video',
-      //   component: VideoUp
-      // },
+      {
+        path: '/login',
+        component: Login
+      },
       {
         path: '*',
         component: home

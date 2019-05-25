@@ -2,10 +2,18 @@
   <div id="app">
     <el-container>
       <el-header>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
-                 @select="handleSelect" text-color="#303133" :router="true">
-          <el-menu-item v-for="menu in menus" :index="menu.path">{{ menu.label }}</el-menu-item>
-        </el-menu>
+        <el-col :span="20">
+          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
+                   @select="handleSelect" text-color="#303133" :router="true">
+            <el-menu-item v-for="menu in menus" :index="menu.path">{{ menu.label }}</el-menu-item>
+          </el-menu>
+        </el-col>
+        <el-col :span="4">
+          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
+                   @select="handleSelect" text-color="#303133" :router="true">
+            <el-menu-item v-for="menu in right" :index="menu.path">{{ menu.label }}</el-menu-item>
+          </el-menu>
+        </el-col>
       </el-header>
 
       <el-main style="height:calc(100vh - 120px);">
@@ -30,8 +38,8 @@ export default {
   data() {
     return {
       activeIndex: '/home',
-      // activeIndex2: '/home',
-      menus: conf.menus
+      menus: conf.menus,
+      right: conf.rightMenus,
     };
   },
   methods: {
@@ -39,12 +47,7 @@ export default {
       console.log(key, keyPath);
     },
     testClick() {
-      // window.open("/player", '_blank');
-      // let url = 'test'
-      // this.$router.push({path: '/player', query: {url}}, '_blank')
-
       let routeData = this.$router.resolve({path: '/player', query: {video:'/file/go/a.txt'}});
-
       window.open(routeData.href, '_blank');
     }
   }

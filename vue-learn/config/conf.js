@@ -20,5 +20,19 @@ module.exports = {
     path:  "/operation",
     label: "运维管理"
   }],
+  rightMenus:[
+    {
+      path:  "/user",
+      label: "用户中心"
+    },
+    {
+      path:  "/set",
+      label: "系统设置"
+    },
+    {
+      path:  "/login",
+      label: "登陆"
+    },
+  ],
   File: "/fileApi/files/upload/videos"
 }
