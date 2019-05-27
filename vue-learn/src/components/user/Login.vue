@@ -9,11 +9,12 @@
         <div class="log-cloud cloud3"></div>
         <div class="log-cloud cloud4"></div>
 
-        <div class="log-logo">Welcome!</div>
-        <div class="log-text">@doterlin</div>
+        <div class="log-logo">agfun!</div>
+        <div class="log-text">www.qq.com</div>
     </div>
     <div class="log-email">
-        <input type="text" placeholder="Email" :class="'log-input' + (account==''?' log-input-empty':'')" v-model="account"><input type="password" placeholder="Password" :class="'log-input' + (password==''?' log-input-empty':'')"  v-model="password">
+        <input type="text" placeholder="Email" :class="'log-input' + (account==''?' log-input-empty':'')" v-model="account">
+        <input type="password" placeholder="Password" :class="'log-input' + (password==''?' log-input-empty':'')"  v-model="password">
         <a href="javascript:;" class="log-btn" @click="login">Login</a>
         <a>注册</a>
     </div>

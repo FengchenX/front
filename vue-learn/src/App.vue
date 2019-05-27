@@ -47,8 +47,9 @@ export default {
       console.log(key, keyPath);
     },
     testClick() {
-      let routeData = this.$router.resolve({path: '/player', query: {video:'/file/go/a.txt'}});
-      window.open(routeData.href, '_blank');
+      // let routeData = this.$router.resolve({path: '/player', query: {video:'/file/go/a.txt'}});
+      // window.open(routeData.href, '_blank');
+      window.open('/test', '_blank')
     }
   }
 }

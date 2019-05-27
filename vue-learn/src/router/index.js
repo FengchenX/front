@@ -12,6 +12,7 @@ import OperateContent from  'components/operation/OperateContent'
 import Movie from 'components/operation/Movie'
 import Player from "../components/common/Player";
 import Login from "../components/user/Login";
+import test from "../components/test";
 
 let router = new VueRouter({
     mode: 'history',
@@ -49,6 +50,10 @@ let router = new VueRouter({
       {
         path: '/login',
         component: Login
+      },
+      {
+        path: '/test',
+        component: test
       },
       {
         path: '*',
