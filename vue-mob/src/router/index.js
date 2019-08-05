@@ -1,0 +1,87 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import App from '../App'
+
+Vue.use(Router)
+
+Router.prototype.go = function() {
+    this.isBack = true
+    window.history.go(-1)
+}
+
+// 路由懒加载
+const index = () => import('@/page/index/index')
+const channel = () => import('@/page/index/children/channel')
+// const detail = () => import('@/page/detail/detail')
+/***********************************************************************/
+const detail = () => import('@/page/detail/detail2')
+const index2 = () => import('@/page/index/index2')
+const video = () => import('@/page/video/video')
+const smallVideo = () => import('@/page/video/children/smallVideo/smallVideo')
+const smallVideoDetail = () => import('@/page/video/children/smallVideo/detail/detail')
+const article = () => import('@/page/video/children/article/article')
+/***********************************************************************/
+const search = () => import('@/page/search/search')
+
+export default new Router({
+    routes: [
+        {
+            path: '',
+            // redirect: '/index',
+            /***********************************************/
+            redirect: '/index2',
+            /***********************************************/
+            component: App,
+            children: [
+                /****************************************************/
+                {
+                  path: '/index2',
+                  component: index2
+                },
+                {
+                  path: '/video',
+                  component: video
+                },
+                {
+                  path: '/small-video',
+                  component: smallVideo
+                },
+                {
+                  path: '/detail/small-video',
+                  component: smallVideoDetail
+                },
+                {
+                  path: '/article',
+                  component: article
+                },
+                /****************************************************/
+                // index页面
+                {
+                    name: 'index',
+                    path: '/index',
+                    component: index,
+                    children: [
+                        // channel页面
+                        {
+                            name: 'channel',
+                            path: 'channel',
+                            component: channel
+                        }
+                    ]
+                },
+                // detail页面
+                {
+                    name: 'detail',
+                    path: '/detail',
+                    component: detail
+                },
+                // search页面
+                {
+                    name: 'search',
+                    path: '/search',
+                    component: search
+                }
+            ]
+        }
+    ]
+})
