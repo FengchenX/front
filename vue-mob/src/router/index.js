@@ -20,68 +20,73 @@ const video = () => import('@/page/video/video')
 const smallVideo = () => import('@/page/video/children/smallVideo/smallVideo')
 const smallVideoDetail = () => import('@/page/video/children/smallVideo/detail/detail')
 const article = () => import('@/page/video/children/article/article')
+const login = () => import('@/page/user/login')
 /***********************************************************************/
 const search = () => import('@/page/search/search')
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '',
+      // redirect: '/index',
+      /***********************************************/
+      redirect: '/login',
+      /***********************************************/
+      component: App,
+      children: [
+          /****************************************************/
         {
-            path: '',
-            // redirect: '/index',
-            /***********************************************/
-            redirect: '/index2',
-            /***********************************************/
-            component: App,
-            children: [
-                /****************************************************/
-                {
-                  path: '/index2',
-                  component: index2
-                },
-                {
-                  path: '/video',
-                  component: video
-                },
-                {
-                  path: '/small-video',
-                  component: smallVideo
-                },
-                {
-                  path: '/detail/small-video',
-                  component: smallVideoDetail
-                },
-                {
-                  path: '/article',
-                  component: article
-                },
-                /****************************************************/
-                // index页面
-                {
-                    name: 'index',
-                    path: '/index',
-                    component: index,
-                    children: [
-                        // channel页面
-                        {
-                            name: 'channel',
-                            path: 'channel',
-                            component: channel
-                        }
-                    ]
-                },
-                // detail页面
-                {
-                    name: 'detail',
-                    path: '/detail',
-                    component: detail
-                },
-                // search页面
-                {
-                    name: 'search',
-                    path: '/search',
-                    component: search
-                }
-            ]
-        }
-    ]
+          path: '/index2',
+          component: index2
+        },
+        {
+          path: '/video',
+          component: video
+        },
+        {
+          path: '/small-video',
+          component: smallVideo
+        },
+        {
+          path: '/detail/small-video',
+          component: smallVideoDetail
+        },
+        {
+          path: '/article',
+          component: article
+        },
+        {
+          path: '/login',
+          component: login
+        },
+          /****************************************************/
+          // index页面
+          {
+              name: 'index',
+              path: '/index',
+              component: index,
+              children: [
+                  // channel页面
+                  {
+                      name: 'channel',
+                      path: 'channel',
+                      component: channel
+                  }
+              ]
+          },
+          // detail页面
+          {
+              name: 'detail',
+              path: '/detail',
+              component: detail
+          },
+          // search页面
+          {
+              name: 'search',
+              path: '/search',
+              component: search
+          }
+      ]
+    }
+  ]
 })
