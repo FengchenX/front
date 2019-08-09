@@ -21,6 +21,8 @@ const smallVideo = () => import('@/page/video/children/smallVideo/smallVideo')
 const smallVideoDetail = () => import('@/page/video/children/smallVideo/detail/detail')
 const article = () => import('@/page/video/children/article/article')
 const login = () => import('@/page/user/login')
+
+const test = () => import('@/page/test/test')
 /***********************************************************************/
 const search = () => import('@/page/search/search')
 
@@ -30,7 +32,7 @@ export default new Router({
       path: '',
       // redirect: '/index',
       /***********************************************/
-      redirect: '/login',
+      redirect: '/test',
       /***********************************************/
       component: App,
       children: [
@@ -58,6 +60,10 @@ export default new Router({
         {
           path: '/login',
           component: login
+        },
+        {
+          path: '/test',
+          component: test
         },
           /****************************************************/
           // index页面
