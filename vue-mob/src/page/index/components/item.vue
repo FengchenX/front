@@ -22,7 +22,7 @@
     <li v-else-if="section.thumbs.length === 1">
       <router-link :to="url(section)" class='oneLarge'>
         <div class="news_title">
-          <h3 v-html="section.title"></h3>
+          <h3 v-html="section.name"></h3>
         </div>
         <div class='news_img'>
           <img v-lazy.container='section.thumbs[0]'>
@@ -34,7 +34,7 @@
     <li v-else-if="section.thumbs.length === 3">
       <router-link :to="url(section)" class='threeSmall'>
         <div class="news_title">
-          <h3 v-html="section.title"></h3>
+          <h3 v-html="section.name"></h3>
         </div>
         <div class='list_img'>
           <ul>

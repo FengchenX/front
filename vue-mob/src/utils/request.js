@@ -7,7 +7,7 @@ Vue.prototype.$http = axios
 /**************************************************************/
 // axios.defaults.baseURL = 'http://localhost:8080'
 axios.defaults.headers = {
-  'session': '88b86c53-ba9d-4867-bee7-f2bced256e2d'
+  // 'session': '88b86c53-ba9d-4867-bee7-f2bced256e2d'
 }
 /**************************************************************/
 

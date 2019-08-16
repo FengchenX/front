@@ -5,9 +5,9 @@
         <img slot="icon" src="../assets/img/首页.png">
         首页
       </mt-tab-item>
-      <mt-tab-item id="影视">
+      <mt-tab-item id="影视文章">
         <img slot="icon" src="../assets/img/列表导航_影视.png">
-        影视
+        影视文章
       </mt-tab-item>
       <mt-tab-item id="我的">
         <img slot="icon" src="../assets/img/我的.png">
@@ -36,7 +36,7 @@
                     case '首页':
                         this.$router.push('/index2')
                         break
-                    case '影视':
+                    case '影视文章':
                         this.$router.push('/video')
                         break
                     case '我的':
