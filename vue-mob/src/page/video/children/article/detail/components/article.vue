@@ -1,18 +1,19 @@
 <template>
   <div id="article">
-    <!-- 信息 -->
-    <div class="article_info">
-      <h1 class="title">{{art_name}}</h1>
-<!--      <span class="befrom">{{json.befrom}}</span>-->
-<!--      <span class="newstime">{{json.newstime}}</span>-->
+    <h1 class="title">{{art_name}}</h1>
+    <div class="information">
+      <div class="userLogo">
+        <img :src="creator_icon"/>
+      </div>
+      <div class="userName">
+        <span class="name">{{creator_name}}</span><img src="../../../../../../assets/img/首页.png"/><br/>
+        <span class="time">{{create_at}}</span>
+      </div>
+      <a href="#" class="about">+关注</a>
     </div>
-    <!-- 文字 & 图片 -->
-    <template v-else>
-      <section class="article_content">
-        <div class="content_html" v-html='content' :class="{'content_html-close' : content_more}"></div>
-        <div class='content_moreBtn' v-if="content_more" @click.stop="content_more = false">展开全文...</div>
-      </section>
-    </template>
+    <!--文章的内容-->
+    <p class="content" v-html="content" :class="{more:content_more}"></p>
+    <div class="moreContent" @click="shrinkArticle" v-show="!content_more">展开全文</div>
   </div>
 </template>
 
@@ -25,7 +26,10 @@
             return {
                 content_more: false,
                 art_name: '',
-                content: ''
+                content: '',
+                creator_icon: '',
+                creator_name: '',
+                create_at: ''
             }
         },
         watch: {
@@ -50,6 +54,10 @@
             console.log('111111111111111111111', this.json)
             this.get_Article_data({id: this.json.id}).then(res => {
                 this.content = res.data.content
+                this.art_name = res.data.name
+                this.creator_icon = res.data.creator_icon
+                this.creator_name = res.data.creator_name
+                this.create_at = res.data.create_at
             })
         }
     }
@@ -57,64 +65,95 @@
 
 <style scoped lang="stylus">
   #article {
-    width: 100%;
-    position: relative;
-    .article_info {
-      font-size: 12px;
-      overflow: hidden;
-      background: #fff;
-      padding: 0 0.427rem 0.4rem;
-      border-bottom: 1px solid #eee;
-      background: #fff;
-      .title {
-        color: #000;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 0.4rem 0;
+    padding:0 17px;
+    background-color: #f8f8f8;
+    .title{
+      font-size 25px;
+      padding-top 16px;
+      line-height 34px;
+      font-weight bolder;
+      color #222;
+    }
+    .information{
+      margin-top 12px;
+      position relative;
+      .userLogo{
+        height 32px;
+        width 32px;
+        border-radius 32px;
+        overflow hidden;
+        float: left;
+        img{
+          width: 30px;
+          height: 30px;
+        }
       }
-      .befrom {
-        margin-right: 5px;
+      .userName{
+        font-size:12px;
+        line-height:16px;
+        margin-left: 40px;
+        .name{
+          color: #406599
+        }
+        .time{
+          color: #999;
+        }
+        img{
+          width: 15px;
+          height: 15px;
+        }
+      }
+      .about{
+        background-color:#2a90d7;
+        border: none;
+        border-radius: 5px;
+        color:#fff;
+        letter-spacing: 5px;
+        text-decoration: none;
+        width:72px;
+        height:28px;
+        line-height:28px;
+        text-align: center;
+        position:absolute;
+        top:50%;
+        margin-top: -14px;
+        right:0px;
+        font-size small;
       }
     }
-    .article_content {
-      position: relative;
-      color: #333;
-      font-size: 18px !important;
-      line-height: 30px;
-      padding: 0.4rem 0.427rem;
-      .content_html {
-        overflow: hidden;
-        text-indent: none !important;
-        font-size: inherit;
-        &.content_html-close{
-          height: 1200px;
-        }
-        img {
-          width: 100% !important;
-          height: auto !important;
-        }
-        img[type="icon"]{
-          width: initial!important;
-        }
-        *{
-          text-indent: inherit !important;
-          font-size: inherit !important;
-          font-family: inherit !important;
-          line-height: inherit !important;
-          text-align: justify !important;
-        }
-        div,p{
-          width: 100% !important;
-          padding-bottom: 15px;
-        }
+    .content {
+      padding-top: 24px;
+      max-height:500px;
+      overflow: hidden;
+      h2 {
+        font-size: 18px;
+        border-left-width: 3px;
+        border-left: solid #ed4040;
+        padding-left: 6px;
+        line-height: 28px;
+        margin: 12px 0;
       }
-      .content_moreBtn {
-        margin-top: 15px;
-        padding: 5px 0;
-        text-align: center;
-        font-size: 14px;
-        color: #00939c;
+      p {
+        margin-bottom:24px;
+        word-wrap: break-word;
+        font-size: 18px;
+        line-height: 28px;
+        color: #333;
       }
+    }
+    .more{
+      max-height 750px;
+      overflow: scroll;
+      &::-webkit-scrollbar{
+        display none
+      }
+    }
+    .moreContent{
+      margin-top: 22px;
+      text-align: center;
+      height: 20px;
+      line-height: 20px;
+      color: #54a0dc;
     }
   }
 </style>
