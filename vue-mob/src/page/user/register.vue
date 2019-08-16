@@ -8,8 +8,8 @@
       <div class="log-cloud cloud4"></div>
     </div>
     <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="account"></mt-field>
-    <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
-    <mt-field label="密码" placeholder="请确认密码" type="password" v-model="password"></mt-field>
+    <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password1"></mt-field>
+    <mt-field label="密码" placeholder="请确认密码" type="password" v-model="password2"></mt-field>
     <mt-button type="primary" size="large">注册</mt-button>
 <!--    <div style="text-align: right; font-size: 20px; padding-right: 30px"><a>注册</a></div>-->
   </div>
@@ -21,21 +21,22 @@
         data() {
             return {
                 account: '',
-                password: ''
+                password1: '',
+                password2: ''
             }
         },
         components: {
         },
         methods: {
             // 登录逻辑
-            login() {
-                if (this.account !== '' && this.password !== '') {
-                    this.toLogin()
+            register() {
+                if (this.account !== '' && this.password1 !== '' && this.password1 === this.password2) {
+                    this.toRegister()
                 }
             },
 
             // 登录请求
-            toLogin() {
+            toRegister() {
             }
         },
         mounted() {
