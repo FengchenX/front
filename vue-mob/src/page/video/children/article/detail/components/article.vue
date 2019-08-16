@@ -34,7 +34,14 @@
         },
         watch: {
             json(val) {
-                this.shrinkArticle()
+                // this.shrinkArticle()
+                this.get_article_data({id: this.json.id}).then(res => {
+                    this.content = res.content
+                    this.art_name = res.name
+                    this.creator_icon = res.creator_icon
+                    this.creator_name = res.creator_name
+                    this.create_at = res.create_at
+                })
             }
         },
         methods: {
@@ -43,22 +50,16 @@
             ]),
             // 是否显示查看全文
             shrinkArticle() {
-                if (this.content && this.content.length >= 1400) {
-                    this.content_more = true
-                } else {
-                    this.content_more = false
-                }
+                console.log('111111111111111111111', this.content_more)
+                this.content = true
+                // if (this.content && this.content.length >= 1400) {
+                //     this.content_more = true
+                // } else {
+                //     this.content_more = false
+                // }
             }
         },
         mounted() {
-            console.log('111111111111111111111', this.json)
-            this.get_Article_data({id: this.json.id}).then(res => {
-                this.content = res.data.content
-                this.art_name = res.data.name
-                this.creator_icon = res.data.creator_icon
-                this.creator_name = res.data.creator_name
-                this.create_at = res.data.create_at
-            })
         }
     }
 </script>

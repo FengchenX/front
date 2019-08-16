@@ -4,7 +4,7 @@
     <li v-if="section.thumb">
       <router-link :to="url(section)" class='oneLarge'>
         <div class="news_title">
-          <h3 v-html="section.title"></h3>
+          <h3 v-html="section.name"></h3>
         </div>
         <div class='news_img'>
           <img v-lazy.container='section.thumb'>
@@ -42,12 +42,13 @@
                 url: '',
                 name: '',
                 thumb: '',
-                type: ''
+                type: '',
+                id: ''
             }
         },
         methods: {
             url(item) {
-                return `/detail/small-video?id=${item.id}&url=${item.url}&name=${item.name}&thumb=${item.thumb}`
+                return `/detail/article?id=${item.id}`
             }
         }
     }

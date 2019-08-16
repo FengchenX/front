@@ -86,7 +86,7 @@
             },
             // 获取title分类
             async handleTitle() {
-                this.title = `${this.title} * 小视频`
+                this.title = `${this.title} * 文章`
             },
             handleLocation(type) {
                 if (type === 'get') {
