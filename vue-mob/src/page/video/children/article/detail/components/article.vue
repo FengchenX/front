@@ -51,7 +51,7 @@
             // 是否显示查看全文
             shrinkArticle() {
                 console.log('111111111111111111111', this.content_more)
-                this.content = true
+                this.content_more = true
                 // if (this.content && this.content.length >= 1400) {
                 //     this.content_more = true
                 // } else {
@@ -143,7 +143,7 @@
       }
     }
     .more{
-      max-height 750px;
+      max-height 545px;
       overflow: scroll;
       &::-webkit-scrollbar{
         display none

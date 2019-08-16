@@ -8,7 +8,7 @@
     <div class="content">
       <div class="container" v-swiper:swiperRight='true'>
         <!-- 正文 -->
-        <my-article v-bind:json="{id: this.id}"></my-article>
+        <my-article :json="{id: this.id}"></my-article>
         <!-- 标签 -->
         <!--                <my-tags v-if="articleJson.infotags" :json='articleJson.infotags'/>-->
         <!-- 热点评论 -->
