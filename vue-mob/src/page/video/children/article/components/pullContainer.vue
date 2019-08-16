@@ -45,7 +45,7 @@
                 bottomLoading: true,    // 底部loading
                 bottomNoData: false,    // 底部nothing
                 loading: false,
-                pageSize: 10   // 每页大小
+                pageSize: 5   // 每页大小
             }
         },
         components: {
@@ -71,6 +71,7 @@
             // 底部上滑请求
             loadBottomAjax () {
                 this.bottomLock = true  // 上滑开关
+                this.bottomLoading = true
                 /******************************************************/
                 let params = {limit: `${this.pageSize}`, offset: `${(this.classPage - 1) * this.pageSize}`}
                 /******************************************************/
@@ -83,6 +84,8 @@
                             this.contentJson.push(...res.data.articles)
                             /***************************************************/
                             this.classPage++
+                            this.bottomLoading = false
+                            console.log('111111111111111111111111111111111eee')
                         } else {
                             this.bottomLoading = false
                             this.bottomNoData = true
@@ -116,6 +119,7 @@
                         }
                         this.$refs.loadmore.onTopLoaded()   // mint-ui 下拉组件的方法
                         this.loading = false
+                        this.bottomLoading = false
                         $(`.container.${this.type} .requestFail`).hide()
                     })
                     .catch(err => {
