@@ -11,6 +11,7 @@ import smallVideoComments_module from './video/smallVideo/detail/comments'
 import index2_module from './index/index2'
 import article_module from './article/index'
 import articleDetail_module from './article/detail/index'
+import register_module from './user/register'
 /******************************************************/
 Vue.use(Vuex)
 
@@ -30,20 +31,21 @@ const actions = {
 }
 
 export default new Vuex.Store({
-    state,
-    getters,
-    mutations,
-    actions,
-    modules: {
-        index: index_module,
-        detail: detail_module,
-        search: search_module,
-        comments: comments_module,
-        smallVideo: smallVideo_module,
-        smallVideoComments: smallVideoComments_module,
-        smallVideoDetail: smallVideoDetail_module,
-        index2: index2_module,
-        article: article_module,
-        articleDetail: articleDetail_module
-    }
+  state,
+  getters,
+  mutations,
+  actions,
+  modules: {
+    index: index_module,
+    detail: detail_module,
+    search: search_module,
+    comments: comments_module,
+    smallVideo: smallVideo_module,
+    smallVideoComments: smallVideoComments_module,
+    smallVideoDetail: smallVideoDetail_module,
+    index2: index2_module,
+    article: article_module,
+    articleDetail: articleDetail_module,
+    register: register_module
+  }
 })

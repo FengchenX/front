@@ -32,6 +32,13 @@ module.exports = {
               '^/artApi': ''
             },
           },
+          '/authApi': {
+            target: 'http://localhost:8083',
+            changeOrigin: true,
+            pathRewrite: {
+              '^/authApi': ''
+            }
+          }
         },
 
         // Various Dev Server settings
