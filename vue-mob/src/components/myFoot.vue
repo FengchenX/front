@@ -40,7 +40,7 @@
                         this.$router.push('/video')
                         break
                     case '我的':
-                        this.$router.push('/')
+                        this.$router.push('/me')
                         break
                 }
                 cache.setSession('tabIndex', val)

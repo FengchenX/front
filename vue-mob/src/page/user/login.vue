@@ -47,7 +47,7 @@
                         // 跳转到我的页面
                         if (res.code === 0) {
                             console.log('211111111111222222222222111111111111111')
-                            this.$router.push('/my')
+                            this.$router.push('/me')
                         }
                     }
                 )
