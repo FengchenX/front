@@ -13,6 +13,7 @@ import article_module from './article/index'
 import articleDetail_module from './article/detail/index'
 import register_module from './user/register'
 import login_module from './user/login'
+import me_module from './user/me'
 /******************************************************/
 Vue.use(Vuex)
 
@@ -48,6 +49,7 @@ export default new Vuex.Store({
     article: article_module,
     articleDetail: articleDetail_module,
     register: register_module,
-    login: login_module
+    login: login_module,
+    me: me_module
   }
 })

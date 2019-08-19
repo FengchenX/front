@@ -9,6 +9,9 @@ export default {
   mutations: {
     setSession(state, val) {
       cache.setLocal('session', val)
+    },
+    setUserID(state, val) {
+      cache.setLocal('userID', val)
     }
   },
   actions: {
@@ -21,6 +24,7 @@ export default {
       await request('PUT', url, params)
         .then(res => {
           commit('setSession', res.data.session)
+          commit('setUserID', res.data.id)
           result = res
         })
       return result

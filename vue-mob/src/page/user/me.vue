@@ -3,9 +3,9 @@
     <div class="pd10 first">
       <mt-cell title="王大锤" label="微信号：18813364620" :is-link="false" to="/me/information">
         <img slot="icon" src="../../assets/img/我的.png" class="avatar">
-        <span>
-          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">
-        </span>
+<!--        <span>-->
+<!--          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">-->
+<!--        </span>-->
       </mt-cell>
     </div>
 
@@ -39,8 +39,34 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
     export default {
-        name: 'me'
+        name: 'me',
+        data() {
+          return {
+              nick: '',
+              name: '',
+              icon: ''
+          }
+        },
+        methods: {
+            ...mapActions(
+                'me', [
+                    'get_user_info'
+                ]
+            )
+        },
+        mounted() {
+            this.get_user_info().then(
+                res => {
+                    if (res.code !== 0) {
+                    } else {
+                        this.nick = res.data.nick
+                        this.name = res.data.name
+                    }
+                }
+            )
+        }
     }
 </script>
 

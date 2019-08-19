@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import cache from '@/utils/cache'
 // import qs from 'qs'
 
 Vue.prototype.$http = axios
@@ -26,33 +27,42 @@ axios.defaults.headers = {
 //     Search: 'search.php'                // 搜索
 // }
 
-export var request = async(type = 'POST', url = '', data = {}) => {
-    let result
-    type = type.toUpperCase()
-    // url = ajaxURL[url]
-    if (type === 'GET') {
-        console.log('request**********************GET', url, data)
-        await axios.get(url, { params: data })
-        .then(res => {
-            result = res.data
-        })
-    } else if (type === 'POST') {
-      console.log('request**********************POST', url, data)
-        // await axios.post(url, qs.stringify(data))
-      await axios.post(url, data)
-        .then(res => {
-            result = res.data
-        })
-    } else if (type === 'PUT') {
-      console.log('request**********************PUT', url, data)
-      await axios.put(url, data).then(
-        res => {
+export var request = async(type = 'POST', url = '', data = {}, headers = {}) => {
+  let result
+  type = type.toUpperCase()
+  // 设置头部
+  let local = cache.getLocal('session')
+  if (local) {
+    // 存在session
+    headers.session = local
+  }
+  if (JSON.stringify(headers) !== '{}') {
+    axios.defaults.headers = headers
+  }
+  // url = ajaxURL[url]
+  if (type === 'GET') {
+      console.log('request**********************GET', url, data)
+      await axios.get(url, { params: data })
+      .then(res => {
           result = res.data
-        }
-      )
-    } else if (type === 'DELETE') {
-      console.log('request**************************DELETE', url, data)
-      await axios.delete(url, { params: data })
-    }
-    return result
+      })
+  } else if (type === 'POST') {
+    console.log('request**********************POST', url, data)
+      // await axios.post(url, qs.stringify(data))
+    await axios.post(url, data)
+      .then(res => {
+          result = res.data
+      })
+  } else if (type === 'PUT') {
+    console.log('request**********************PUT', url, data)
+    await axios.put(url, data).then(
+      res => {
+        result = res.data
+      }
+    )
+  } else if (type === 'DELETE') {
+    console.log('request**************************DELETE', url, data)
+    await axios.delete(url, { params: data })
+  }
+  return result
 }
