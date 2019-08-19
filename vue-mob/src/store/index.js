@@ -12,6 +12,7 @@ import index2_module from './index/index2'
 import article_module from './article/index'
 import articleDetail_module from './article/detail/index'
 import register_module from './user/register'
+import login_module from './user/login'
 /******************************************************/
 Vue.use(Vuex)
 
@@ -46,6 +47,7 @@ export default new Vuex.Store({
     index2: index2_module,
     article: article_module,
     articleDetail: articleDetail_module,
-    register: register_module
+    register: register_module,
+    login: login_module
   }
 })

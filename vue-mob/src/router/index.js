@@ -23,6 +23,7 @@ const article = () => import('@/page/video/children/article/article')
 const articleDetail = () => import('@/page/video/children/article/detail/detail')
 const login = () => import('@/page/user/login')
 const register = () => import('@/page/user/register')
+const my = () => import('@/page/user/my')
 
 const test = () => import('@/page/test/test')
 /***********************************************************************/
@@ -70,6 +71,10 @@ export default new Router({
         {
           path: '/register',
           component: register
+        },
+        {
+          path: '/my',
+          component: my
         },
         {
           path: '/test',

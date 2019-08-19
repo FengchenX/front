@@ -85,7 +85,6 @@
                             /***************************************************/
                             this.classPage++
                             this.bottomLoading = false
-                            console.log('111111111111111111111111111111111eee')
                         } else {
                             this.bottomLoading = false
                             this.bottomNoData = true
@@ -101,7 +100,6 @@
                 // this.get_listItem_data(this.classPage)
                 this.get_listItem_data(params)
                     .then(res => {
-                        console.log('11111111111111111', res.data)
                         this.loading = false
                         if (res && res.data.articles) {
                             /********************************************/

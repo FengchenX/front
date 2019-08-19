@@ -43,6 +43,16 @@ export var request = async(type = 'POST', url = '', data = {}) => {
         .then(res => {
             result = res.data
         })
+    } else if (type === 'PUT') {
+      console.log('request**********************PUT', url, data)
+      await axios.put(url, data).then(
+        res => {
+          result = res.data
+        }
+      )
+    } else if (type === 'DELETE') {
+      console.log('request**************************DELETE', url, data)
+      await axios.delete(url, { params: data })
     }
     return result
 }

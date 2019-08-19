@@ -50,7 +50,6 @@
             ]),
             // 是否显示查看全文
             shrinkArticle() {
-                console.log('111111111111111111111', this.content_more)
                 this.content_more = true
                 // if (this.content && this.content.length >= 1400) {
                 //     this.content_more = true

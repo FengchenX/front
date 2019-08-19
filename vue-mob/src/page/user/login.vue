@@ -9,12 +9,13 @@
     </div>
     <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="account"></mt-field>
     <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
-    <mt-button type="primary" size="large">登录</mt-button>
+    <mt-button type="primary" size="large" @click="login">登录</mt-button>
     <div style="text-align: right; font-size: 20px; padding-right: 30px"><a href="#/register" style="color: #2a90d7">没有账号? 点击注册</a></div>
   </div>
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
     export default {
         name: 'login',
         data() {
@@ -26,15 +27,30 @@
         components: {
         },
         methods: {
+            ...mapActions(
+                'login', [
+                    'put_login_data'
+                ]
+            ),
             // 登录逻辑
             login() {
                 if (this.account !== '' && this.password !== '') {
-                    this.toLogin()
+                    this.toLogin(this.account, this.password)
                 }
             },
 
             // 登录请求
-            toLogin() {
+            toLogin(account, pwd) {
+                let params = {name: account, pwd: pwd}
+                this.put_login_data(params).then(
+                    res => {
+                        // 跳转到我的页面
+                        if (res.code === 0) {
+                            console.log('211111111111222222222222111111111111111')
+                            this.$router.push('/my')
+                        }
+                    }
+                )
             }
         },
         mounted() {
