@@ -2,7 +2,7 @@
   <div id="my">
     <div class="pd10 first">
       <mt-cell :title="nick" :label=`账号：${name}` :is-link="false" to="/me/information">
-        <img slot="icon" src="../../assets/img/我的.png" class="avatar">
+        <img slot="icon" :src="icon" class="avatar">
 <!--        <span>-->
 <!--          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">-->
 <!--        </span>-->
@@ -63,6 +63,7 @@
                     } else {
                         this.nick = res.data.nick
                         this.name = res.data.name
+                        this.icon = res.data.icon
                     }
                 }
             )
