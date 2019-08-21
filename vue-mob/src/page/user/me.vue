@@ -1,7 +1,7 @@
 <template>
   <div id="my">
     <div class="pd10 first">
-      <mt-cell :title="nick" :label=`账号：${name}` :is-link="false" to="/me/information">
+      <mt-cell :title="nick" :label="label" is-link to="/me/information">
         <img slot="icon" :src="icon" class="avatar">
 <!--        <span>-->
 <!--          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">-->
@@ -46,7 +46,8 @@
           return {
               nick: '',
               name: '',
-              icon: ''
+              icon: '',
+              phone: '',
           }
         },
         methods: {
@@ -63,10 +64,16 @@
                     } else {
                         this.nick = res.data.nick
                         this.name = res.data.name
-                        this.icon = res.data.icon
+                        this.icon = res.data.thumb
+                        this.phone = res.data.telephone
                     }
                 }
             )
+        },
+        computed: {
+            label: function() {
+                return `账号: ${this.name}`
+            }
         }
     }
 </script>

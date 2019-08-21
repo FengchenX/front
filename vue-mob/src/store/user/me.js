@@ -3,8 +3,12 @@ import { request } from '@/utils/request'
 export default {
   namespaced: true,
   state: {
+    info: {}
   },
   getters: {
+    info: state => {
+      return state.info
+    }
   },
   mutations: {
   },
@@ -18,6 +22,7 @@ export default {
       await request('GET', url).then(
         res => {
           result = res
+          info = res.data
         }
       )
       return result
