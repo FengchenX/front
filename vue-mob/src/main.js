@@ -36,6 +36,7 @@ import listInfo from '@/components/info2'                // 文章列表信息�
 import listItem from '@/components/listItem2'            // 文章列表组件
 import commentItem from '@/components/commentItem2'      // 评论列表组件
 import myFoot from '@/components/myFoot' // 底部组件
+import myComment from '@/components/comment' // 评论组件
 /************************************************/
 // import commentItem from '@/components/commentItem'      // 评论列表组件
 import myBanner from '@/components/banner'              // banner组件
@@ -59,6 +60,7 @@ Vue.component('list-info', listInfo)
 Vue.component('list-item', listItem)
 /*****************************************/
 Vue.component('my-foot', myFoot)
+Vue.component('comment', myComment)
 /*****************************************/
 Vue.component('comment-item', commentItem)
 Vue.component('my-banner', myBanner)

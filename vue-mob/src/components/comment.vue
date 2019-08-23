@@ -1,5 +1,5 @@
 <template>
-  <div id="test">
+  <div id="comment">
      <div class="bg_line" ></div>
       <div class="comment-hot">
           <div class="comment_title">
@@ -19,24 +19,25 @@
 
 <script>
     export default {
-        name: 'test',
+        name: 'comment',
+        props: ['commentsJson'],
         data() {
             return {
-              commentsJson: {
-                comments: [
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  {user: 'user1', content: '评论1'},
-                  ]
-              }
+            //   commentsJson: {
+            //     comments: [
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       {user: 'user1', content: '评论1'},
+            //       ]
+            //   }
             }
         },
         methods: {

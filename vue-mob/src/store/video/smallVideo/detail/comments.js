@@ -26,6 +26,11 @@ export default {
       let url = `/videoApi/videos/${id}/comments`
       await request('GET', url)
         .then(json => {
+          if (json.code !== 0) {
+            // 跳到登录界面
+            this.$router.push('/login')
+            return
+          }
           res = json.data
         })
       return res

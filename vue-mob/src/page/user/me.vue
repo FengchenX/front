@@ -61,6 +61,7 @@
             this.get_user_info().then(
                 res => {
                     if (res.code !== 0) {
+                        // 
                     } else {
                         this.nick = res.data.nick
                         this.name = res.data.name
