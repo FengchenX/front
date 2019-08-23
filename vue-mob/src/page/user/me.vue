@@ -1,5 +1,5 @@
 <template>
-  <div id="my">
+  <div id="me">
     <div class="pd10 first">
       <mt-cell :title="nick" :label="label" is-link to="/me/information">
         <img slot="icon" :src="icon" class="avatar">
@@ -48,6 +48,7 @@
               name: '',
               icon: '',
               phone: '',
+              we_chat: ''
           }
         },
         methods: {
@@ -64,17 +65,45 @@
                     this.name = res.data.name
                     this.icon = res.data.thumb
                     this.phone = res.data.telephone
+                    this.we_chat = res.data.we_chat
                 }
             )
         },
         computed: {
             label: function() {
-                return `账号: ${this.name}`
+                return `账号: ${this.we_chat}`
             }
         }
     }
 </script>
 
-<style scoped>
-
+<style lang='stylus'>
+    #me{
+        line-height 10px;
+        .pd10 {
+        padding: 10px 0;
+        }
+        .first {
+            .avatar {
+                width 48px;
+                height 48px;
+            }
+            .mint-cell-title {
+                position: relative;
+                .mint-cell-text {
+                position absolute;
+                left 56px;
+                top 7px;
+                }
+                .mint-cell-label {
+                position absolute;
+                top 20px;
+                margin-left 57px;
+                }
+            }
+            .mint-cell-wrapper {
+                padding 10px;
+            }
+        }
+    }
 </style>

@@ -16,11 +16,12 @@
               we_chat: '',
               phone: '',
               nick: ''
-
             }
         },
         mounted() {
-          
+          this.we_chat = this.info.we_chat
+          this.phone = this.info.telephone
+          this.nick =this.info.nick
         },
         computed: {
           ...mapGetters('me', [
@@ -28,13 +29,13 @@
           ])
         },
         watch: {
-          info: function(val) {
-            if (val) {
-              this.we_chat = val.we_chat
-              this.phone = val.telephone
-              this.nick =val.nick
-            }
-          }
+          // info: function(val) { 
+          //   if (val) {
+          //     this.we_chat = val.we_chat
+          //     this.phone = val.telephone
+          //     this.nick =val.nick
+          //   }
+          // }
         }
     }
 </script>

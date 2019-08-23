@@ -19,7 +19,6 @@ export default {
     async get_user_info({ state }) {
       let id = cache.getLocal('userID')
       if (!id) {
-        console.log('1111111111111111111111111113')
         router.push('/login')
         return
       }
@@ -28,12 +27,11 @@ export default {
       await request('GET', url).then(
         res => {
           if (res.code !== 0) {
-            console.log('2222222222222222222222222222222')
             router.push('/login')
             return
           }
           result = res
-          info = res.data
+          state.info = res.data
         }
       )
       return result

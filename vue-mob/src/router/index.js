@@ -79,7 +79,7 @@ export default new Router({
           component: me
         },
         {
-          path: '/me/infomation',
+          path: '/me/information',
           component: info
         },
         {
