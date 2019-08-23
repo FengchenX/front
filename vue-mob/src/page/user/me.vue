@@ -1,7 +1,7 @@
 <template>
   <div id="my">
     <div class="pd10 first">
-      <mt-cell :title="nick" :label="label" is-link to="/me/information">
+      <mt-cell :title="nick" :label="label" is-link to="#/me/information">
         <img slot="icon" :src="icon" class="avatar">
 <!--        <span>-->
 <!--          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">-->

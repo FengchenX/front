@@ -36,7 +36,7 @@ export default new Router({
       path: '',
       // redirect: '/index',
       /***********************************************/
-      redirect: '/test',
+      redirect: '/index2',
       /***********************************************/
       component: App,
       children: [
