@@ -59,9 +59,9 @@
             }
         },
         computed: {
-            ...mapState('smallVideoDetail', [
-                'location'
-            ])
+            // ...mapState('smallVideoDetail', [
+            //     'location'
+            // ])
         },
         watch: {
             $route(val) {
@@ -71,10 +71,10 @@
             }
         },
         methods: {
-            ...mapMutations('smallVideoDetail', [
-                'set_location'
-            ]),
-            ...mapActions('smallVideoComments', [
+            // ...mapMutations('smallVideoDetail', [
+            //     'set_location'
+            // ]),
+            ...mapActions('articleComments', [
                 'post_comments_data',
                 'get_comments_data'
             ]),

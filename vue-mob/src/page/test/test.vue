@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-     <router-link to="/small-video">测试评论</router-link>
+     <router-link to="/article">测试评论</router-link>
   </div>
 </template>
 
