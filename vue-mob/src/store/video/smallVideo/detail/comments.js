@@ -1,4 +1,4 @@
-// import cache from '@/utils/cache'
+import cache from '@/utils/cache'
 import { request } from '@/utils/request'
 import router from '@/router/index'
 export default {
@@ -20,12 +20,12 @@ export default {
     async post_comments_data({ commit, state }, {id, user, content}) {
       // state.toComment = {id, user, content}
       let url = `/videoApi/videos/${id}/comments`
-      let params = {user: '游客', content}
+      let params = {user: cache.getLocal('userID'), content, to_user: user}
       await request('POST', url, params)
         .then(json => {
           if (json.code !== 0) {
             // 跳到登录界面
-            router.push({path: '/login',  query: { redirect:'/detail/small-video' }})
+            router.push({path: '/login',  query: { redirect: router.history.current.fullPath }})
             return
           }
           console.log(json.code, json.msg, json.data)

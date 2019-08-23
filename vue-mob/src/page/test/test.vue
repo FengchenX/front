@@ -1,10 +1,11 @@
 <template>
   <div id="test">
-     <router-link to="/small-video">我的</router-link>
+     <router-link to="/small-video">测试评论</router-link>
   </div>
 </template>
 
 <script>
+import cache from '@/utils/cache'
     export default {
         name: 'test',
         data() {
@@ -12,6 +13,10 @@
             }
         },
         methods: {
+        },
+        mounted() {
+            cache.removeLocal('userID')
+            cache.removeLocal('session')
         }
     }
 </script>

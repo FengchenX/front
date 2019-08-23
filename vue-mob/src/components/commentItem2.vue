@@ -4,7 +4,7 @@
         <div class='topFooter'>
             <div class="mid">
                 <div class="content_text">
-                  {{itemJson.user}} : {{itemJson.content}}
+                  {{itemJson.nick}} : {{itemJson.content}}
                 </div>
             </div>
         </div>
