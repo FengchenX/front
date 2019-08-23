@@ -1,5 +1,6 @@
 // import cache from '@/utils/cache'
 import { request } from '@/utils/request'
+import router from '@/router/index'
 export default {
   namespaced: true,
   state: {
@@ -28,7 +29,7 @@ export default {
         .then(json => {
           if (json.code !== 0) {
             // 跳到登录界面
-            this.$router.push('/login')
+            router.push('/login')
             return
           }
           res = json.data
