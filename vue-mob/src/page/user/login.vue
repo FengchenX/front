@@ -46,15 +46,17 @@
                     res => {
                         // 跳转到我的页面
                         if (res.code === 0) {
-                            console.log('211111111111222222222222111111111111111')
+                          if (this.$route.query.redirect) {
+                            this.$router.push(this.$route.query.redirect)
+                          } else {
                             this.$router.push('/me')
+                          }
                         }
                     }
                 )
             }
         },
         mounted() {
-            console.log('111111111111111111111111111111111111', this.$route.query.redirect)
         }
     }
 </script>
