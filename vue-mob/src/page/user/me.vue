@@ -1,7 +1,7 @@
 <template>
   <div id="my">
     <div class="pd10 first">
-      <mt-cell :title="nick" :label="label" is-link to="#/me/information">
+      <mt-cell :title="nick" :label="label" is-link to="/me/information">
         <img slot="icon" :src="icon" class="avatar">
 <!--        <span>-->
 <!--          <img slot="icon" src="../../assets/img/我的.png" style="width: 18px;height: 18px;">-->
@@ -60,14 +60,10 @@
         mounted() {
             this.get_user_info().then(
                 res => {
-                    if (res.code !== 0) {
-                        // 
-                    } else {
-                        this.nick = res.data.nick
-                        this.name = res.data.name
-                        this.icon = res.data.thumb
-                        this.phone = res.data.telephone
-                    }
+                    this.nick = res.data.nick
+                    this.name = res.data.name
+                    this.icon = res.data.thumb
+                    this.phone = res.data.telephone
                 }
             )
         },

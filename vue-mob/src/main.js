@@ -81,7 +81,7 @@ router.beforeEach((to, from, next) => {
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
   const nextRoute = [ '/me' ]
-  let isLogin = localStorage.getItem('session')
+  let isLogin = localStorage.getItem('session') && localStorage.getItem('userID')
   // 未登录状态；当路由到nextRoute指定页时，跳转至login
   if (nextRoute.indexOf(to.path) >= 0 && !isLogin) {
     next({

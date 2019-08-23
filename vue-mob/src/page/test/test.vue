@@ -1,19 +1,6 @@
 <template>
   <div id="test">
-     <div class="bg_line" ></div>
-      <div class="comment-hot">
-          <div class="comment_title">
-              <div class="Line">
-                  <div class="title">用户热评</div>
-              </div>
-          </div>
-          <comment-item v-for='(item,index) in commentsJson.comments' :itemJson='item' :key='index'></comment-item>
-        <div>
-          <mt-field label="评论" placeholder="请输入评论" v-model="message">
-            <mt-button type="primary" v-on:click="commentBtnClick">评论</mt-button>
-          </mt-field>
-        </div>
-      </div>
+     <router-link to="/me">我的</router-link>
   </div>
 </template>
 

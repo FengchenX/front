@@ -10,7 +10,7 @@
     <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="account"></mt-field>
     <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
     <mt-button type="primary" size="large" @click="login">登录</mt-button>
-    <div style="text-align: right; font-size: 20px; padding-right: 30px"><a href="#/register" style="color: #2a90d7">没有账号? 点击注册</a></div>
+    <div style="text-align: right; font-size: 20px; padding-right: 30px"><a href="/register" style="color: #2a90d7">没有账号? 点击注册</a></div>
   </div>
 </template>
 

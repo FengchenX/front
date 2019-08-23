@@ -31,6 +31,7 @@ const test = () => import('@/page/test/test')
 const search = () => import('@/page/search/search')
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '',
