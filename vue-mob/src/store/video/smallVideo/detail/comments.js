@@ -18,6 +18,11 @@ export default {
       let params = {user: '游客', content}
       await request('POST', url, params)
         .then(json => {
+          if (json.code !== 0) {
+            // 跳到登录界面
+            router.push('/login')
+            return
+          }
           console.log(json.code, json.msg, json.data)
         })
     },
@@ -27,11 +32,6 @@ export default {
       let url = `/videoApi/videos/${id}/comments`
       await request('GET', url)
         .then(json => {
-          if (json.code !== 0) {
-            // 跳到登录界面
-            router.push('/login')
-            return
-          }
           res = json.data
         })
       return res
