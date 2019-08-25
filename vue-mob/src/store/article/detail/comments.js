@@ -25,7 +25,7 @@ export default {
         .then(json => {
           if (json.code !== 0) {
             // 跳到登录界面
-            router.push({path: '/login',  query: { redirect: router.history.current.fullPath }})
+            router.push({path: '/login', query: { redirect: router.history.current.fullPath }})
             return
           }
           console.log(json.code, json.msg, json.data)

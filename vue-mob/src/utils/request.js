@@ -12,21 +12,6 @@ axios.defaults.headers = {
 }
 /**************************************************************/
 
-// const ajaxURL = {
-//     // 主页
-//     classID: 'appclassid.php',          // 栏目
-//     Class: 'appclass.php',              // 栏目列表
-//     /*******************************/
-//     Goods: '/goodApi/goods', // 商品
-//     /*******************************/
-//     Stick: 'appistop.php',              // 栏目置顶
-//     // 详情页
-//     Artilce: 'apparticle.php',          // 文章
-//     Recommend: 'apptuijian.php',        // 文章推荐
-//     // 搜索页
-//     Search: 'search.php'                // 搜索
-// }
-
 export var request = async(type = 'POST', url = '', data = {}, headers = {}) => {
   let result
   type = type.toUpperCase()

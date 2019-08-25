@@ -44,7 +44,7 @@
     // import myTags from './components/tags'
     // import myRecommend from './components/recommend'
     // import myShare from './components/share'
-    import { mapState, mapMutations, mapActions } from 'vuex'
+    import { mapActions } from 'vuex'
     export default {
         name: 'detail',
         components: { myArticle },

@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-     <router-link to="/article">测试评论</router-link>
+     <router-link to="/me">测试权限</router-link>
   </div>
 </template>
 

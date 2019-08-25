@@ -37,7 +37,7 @@ export default new Router({
       path: '',
       // redirect: '/index',
       /***********************************************/
-      redirect: '/test',
+      redirect: '/index2',
       /***********************************************/
       component: App,
       children: [
@@ -45,44 +45,35 @@ export default new Router({
         {
           path: '/index2',
           component: index2
-        },
-        {
+        }, {
           path: '/video',
           component: video
-        },
-        {
+        }, {
           path: '/small-video',
           component: smallVideo
         },
         {
           path: '/detail/small-video',
           component: smallVideoDetail
-        },
-        {
+        }, {
           path: '/article',
           component: article
-        },
-        {
+        }, {
           path: '/detail/article',
           component: articleDetail
-        },
-        {
+        }, {
           path: '/login',
           component: login
-        },
-        {
+        }, {
           path: '/register',
           component: register
-        },
-        {
+        }, {
           path: '/me',
           component: me
-        },
-        {
+        }, {
           path: '/me/information',
           component: info
-        },
-        {
+        }, {
           path: '/test',
           component: test
         },
