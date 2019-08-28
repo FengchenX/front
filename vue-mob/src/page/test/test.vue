@@ -45,6 +45,13 @@ import cache from '@/utils/cache'
               //     this.myData = res.data.s;
               // });
               // 调用搜索接口
+              switch (this.keyword) {
+                case '0':
+                    this.myData = 
+                    break;
+                case '1':
+                    break;
+              }
               
           },
           selectDown: function() {
