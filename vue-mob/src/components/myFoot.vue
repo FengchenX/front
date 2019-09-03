@@ -19,6 +19,7 @@
 
 <script>
     import cache from '@/utils/cache'
+
     export default {
         name: 'myFoot',
         data() {
@@ -27,7 +28,7 @@
             }
         },
         watch: {
-            selected: function(val, oldVal) {
+            selected: function (val, oldVal) {
                 // 这里就可以通过 val 的值变更来确定去向
                 if (val === oldVal) {
                     return

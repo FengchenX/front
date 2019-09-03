@@ -1,8 +1,9 @@
 <template>
   <!-- 加载更多 -->
-  <div class="container" v-infinite-scroll="loadBottomAjax" infinite-scroll-disabled="bottomLock" infinite-scroll-distance="10" infinite-scroll-immediate-check="false">
+  <div class="container" v-infinite-scroll="loadBottomAjax" infinite-scroll-disabled="bottomLock"
+       infinite-scroll-distance="10" infinite-scroll-immediate-check="false">
     <!-- 请求提示 -->
-    <my-loading :visible="loading" :reload="init" />
+    <my-loading :visible="loading" :reload="init"/>
 
     <!-- 顶部提示 -->
     <div class="globalTip">
@@ -31,9 +32,10 @@
 </template>
 
 <script>
-    import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
+    import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
     import listItem from './listItem'
-export default {
+
+    export default {
         // name: 'container',
         data() {
             return {
@@ -70,7 +72,7 @@ export default {
                 'setLocation'
             ]),
             // 底部上滑请求
-            loadBottomAjax () {
+            loadBottomAjax() {
                 this.bottomLock = true  // 上滑开关
                 /******************************************************/
                 let params = {limit: `${this.pageSize}`, offset: `${(this.classPage - 1) * this.pageSize}`}
@@ -198,13 +200,15 @@ export default {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     position: relative;
-    .globalTip{
+
+    .globalTip {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       z-index: 999;
-      div{
+
+      div {
         height: 32px;
         line-height: 34px;
         font-size: 14px;
@@ -212,18 +216,21 @@ export default {
         background: rgba(213, 233, 247, .9);
         text-align: center;
         display: none;
+
         &.requestFail {
           color: #f56767;
           background: #FBE9EF;
         }
       }
     }
+
     .mint-loadmore-top {
       height: 50px;
       line-height: 50px;
       font-size: 14px;
     }
-    .pullLoading{
+
+    .pullLoading {
       width: 24px;
       height: 24px;
       vertical-align: middle;

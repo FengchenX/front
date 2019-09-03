@@ -1,29 +1,29 @@
 <template>
-    <ul class="listItem">
-      <template v-for="section in itemJson">
-        <!-- 视频 -->
-        <li v-if="section.url">
-          <router-link :to="url(section)" class='video'>
-            <div class="video_wrapper">
-              <div class="video_info">
-                <div class="video_title">
-                  <p v-html="section.name"></p>
-                </div>
-<!--                <div class="totalTime">{{section.playtime}}</div>-->
-                <img v-lazy.container="section.thumb">
+  <ul class="listItem">
+    <template v-for="section in itemJson">
+      <!-- 视频 -->
+      <li v-if="section.url">
+        <router-link :to="url(section)" class='video'>
+          <div class="video_wrapper">
+            <div class="video_info">
+              <div class="video_title">
+                <p v-html="section.name"></p>
               </div>
-              <div class="playRound">
-                <div class="playSan"></div>
-              </div>
+              <!--                <div class="totalTime">{{section.playtime}}</div>-->
+              <img v-lazy.container="section.thumb">
             </div>
-            <list-info :json='section'></list-info>
-          </router-link>
-        </li>
-        <li v-else-if='section.type' id="lookHere">
-          <p>上次看到这里，点击刷新 <i class="icon-refresh"></i></p>
-        </li>
-      </template>
-    </ul>
+            <div class="playRound">
+              <div class="playSan"></div>
+            </div>
+          </div>
+          <list-info :json='section'></list-info>
+        </router-link>
+      </li>
+      <li v-else-if='section.type' id="lookHere">
+        <p>上次看到这里，点击刷新 <i class="icon-refresh"></i></p>
+      </li>
+    </template>
+  </ul>
 </template>
 
 <script>
@@ -40,13 +40,14 @@
 </script>
 
 <style scoped lang="stylus">
-  small_height=1.96875rem
-  larger_height=4.6875rem
-  .listItem{
+  small_height = 1.96875rem
+  larger_height = 4.6875rem
+  .listItem {
     li {
       margin: 0 0.4rem;
       border-bottom: 1px solid hsla(0, 0%, 87%, .6);
     }
+
     a {
       display: block;
       width: 100%;
@@ -56,6 +57,7 @@
       -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
       text-decoration: none;
     }
+
     a:visited h3 {
       color: #999;
     }
@@ -63,12 +65,15 @@
         color: #fe3333!important;
     font-weight: bold;
   }
+
   img {
     background: #ddd;
   }
+
   img[lazy=loading] {
     height: 100%;
   }
+
   h3 {
     white-space: normal;
     font-size: 17px;
@@ -81,29 +86,36 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
   .oneSmall {
     font-size: 0;
-    & > div{
+
+    & > div {
       display: inline-block;
       vertical-align: middle;
     }
+
     .news_title {
       width: 67%;
       overflow: hidden;
+
       h3 {
         margin-right: 0.32rem;
       }
     }
+
     .news_img {
       width: 33%;
       height: small_height;
       overflow: hidden;
+
       img {
         width: 100%;
         min-height: small_height;
       }
     }
   }
+
   .oneLarge {
     .news_img {
       width: 100%;
@@ -111,53 +123,63 @@
       overflow: hidden;
       height: larger_height;
     }
+
     img {
       width: 100%;
       min-height: larger_height;
     }
   }
+
   .threeSmall {
     .list_img {
       width: 100%;
       margin-top: 0.16rem;
+
       ul {
         width: 100%;
         /*display: flex;*/
         font-size: 0;
       }
+
       li {
         display: inline-block;
         width: 33.3%;
         height: small_height;
         overflow: hidden;
-        margin: 0!important;
+        margin: 0 !important;
         /*flex: 1;*/
       }
+
       li:nth-child(2) {
         padding: 0 2px;
       }
+
       img {
         width: 100%;
         min-height: small_height;
       }
     }
   }
+
   .video {
     video {
       width: 100%;
     }
+
     .video_wrapper {
       width: 100%;
       height: larger_height;
       position: relative;
       overflow: hidden;
       color: #999;
+
       .video_info {
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
+
         img {
           position: absolute;
           width: 100%;
@@ -168,6 +190,7 @@
           z-index: 111;
         }
       }
+
       .video_title {
         position: absolute;
         width: 100%;
@@ -177,15 +200,17 @@
         color: #fff;
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), color-stop(100%, transparent));
         z-index: 222;
+
         p {
           width: 100%;
           font-size: 14px;
           line-height: 24px;
           padding: 8px 0.4rem 0;
           margin: 0;
-          color: #fff!important;
+          color: #fff !important;
         }
       }
+
       .totalTime {
         position: absolute;
         display: inline-block;
@@ -201,6 +226,7 @@
         border-radius: 10px;
         z-index: 222;
       }
+
       .playRound {
         position: absolute;
         width: 50px;
@@ -214,6 +240,7 @@
         z-index: 222;
         border: 1px solid #fff;
       }
+
       .playSan {
         position: absolute;
         width: 0;
@@ -228,10 +255,12 @@
       }
     }
   }
+
   #lookHere {
     background: #f4f5f6;
     border: none !important;
     margin: 0 !important;
+
     p {
       font-size: 12px;
       line-height: 18px;
@@ -242,5 +271,6 @@
       padding: 10px 0;
     }
   }
+
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="index">
     <!-- 头部 -->
-<!--    <my-header/>-->
+    <!--    <my-header/>-->
     <!-- 内容区域 -->
     <pullContainer2></pullContainer2>
     <!-- 底部 -->
@@ -10,17 +10,18 @@
 </template>
 
 <script>
-  import pullContainer2 from './components/pullContainer2'
-  export default {
+    import pullContainer2 from './components/pullContainer2'
+
+    export default {
         name: 'index2',
-      components: {
+        components: {
             pullContainer2
-      }
+        }
     }
 </script>
 
 <style scoped>
-  #index{
+  #index {
     height: 92%;
     overflow: auto;
   }

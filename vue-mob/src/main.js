@@ -13,7 +13,7 @@ import '@/assets/css/transition.css'
 import '@/assets/css/global.css'
 
 // 第三方库
-import MintUI, { MessageBox, Toast, Indicator } from 'mint-ui'     // 饿了么移动端UI组件
+import MintUI, {MessageBox, Toast, Indicator} from 'mint-ui'     // 饿了么移动端UI组件
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'       // swiper滑动组件
 import 'swiper/dist/css/swiper.css'
@@ -68,11 +68,11 @@ Vue.component('popup-menu', popupMenu)
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    store,
-    template: '<App/>',
-    components: { App }
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: {App}
 })
 
 // 全局路由守卫
@@ -80,7 +80,7 @@ router.beforeEach((to, from, next) => {
   // to: Route: 即将要进入的目标 路由对象
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
-  const nextRoute = [ '/me' ]
+  const nextRoute = ['/me']
   let isLogin = localStorage.getItem('session') && localStorage.getItem('userID')
   // 未登录状态；当路由到nextRoute指定页时，跳转至login
   if (nextRoute.indexOf(to.path) >= 0 && !isLogin) {
@@ -96,7 +96,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
     if (isLogin) {
       console.log('已登录')
-      router.push({ path: '/index2' })
+      router.push({path: '/index2'})
     }
   }
 })

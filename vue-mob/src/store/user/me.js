@@ -1,6 +1,7 @@
 import cache from '@/utils/cache'
-import { request } from '@/utils/request'
+import {request} from '@/utils/request'
 import router from '@/router/index'
+
 export default {
   namespaced: true,
   state: {
@@ -11,12 +12,11 @@ export default {
       return state.info
     }
   },
-  mutations: {
-  },
+  mutations: {},
   actions: {
     /**********************************************************************/
     // 查询用户信息
-    async get_user_info({ state }) {
+    async get_user_info({state}) {
       let id = cache.getLocal('userID')
       if (!id) {
         router.push('/login')

@@ -14,7 +14,7 @@
         <!-- 热点评论 -->
         <template>
           <!-- 分割线 -->
-          <div class="bg_line" ></div>
+          <div class="bg_line"></div>
           <div class="comment-hot">
             <div class="comment_title">
               <div class="Line">
@@ -44,10 +44,11 @@
     // import myTags from './components/tags'
     // import myRecommend from './components/recommend'
     // import myShare from './components/share'
-    import { mapActions } from 'vuex'
+    import {mapActions} from 'vuex'
+
     export default {
         name: 'detail',
-        components: { myArticle },
+        components: {myArticle},
         data() {
             return {
                 title: '老常工艺',   // header的title
@@ -148,25 +149,31 @@
     height: 100%;
     overflow: hidden;
     background: #f8f8f8;
+
     header {
       background: #fff;
       color: #333;
       font-size: 16px;
+
       .menu {
         background: url(../../../../../assets/img/menu.png) no-repeat center center;
         background-size: 20px;
       }
     }
+
     .comment-hot {
       padding: 0.533rem 0 0;
       background: #f9f9f9;
+
       .comment_title {
         margin-bottom: 0.4rem;
         position: relative;
+
         .Line {
           position: relative;
           width: 2.8rem;
           margin: 0 auto;
+
           text-align center &:before {
             content: "";
             border-top: 2px solid #aaa;
@@ -176,6 +183,7 @@
             top: 50%;
             left: 0
           }
+
           &:after {
             content: "";
             border-top: 2px solid #aaa;
@@ -186,12 +194,14 @@
             right: 0
           }
         }
+
         .title {
           font-size: 14px;
           font-weight: bold;
         }
       }
     }
+
     .bg_line {
       height: 0.1333rem;
       background: #eee;

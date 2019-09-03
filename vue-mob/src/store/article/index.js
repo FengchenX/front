@@ -1,5 +1,6 @@
 // import cache from '@/utils/cache'
-import { request } from '@/utils/request'
+import {request} from '@/utils/request'
+
 export default {
   namespaced: true,
   state: {
@@ -15,7 +16,7 @@ export default {
       let page = state.page
       let location = state.location
       let content = state.currentContent
-      return { page, location, content }
+      return {page, location, content}
     }
   },
   mutations: {
@@ -25,7 +26,7 @@ export default {
   },
   actions: {
     // 获取文章列表数据
-    async get_listItem_data({ getters }, params) {
+    async get_listItem_data({getters}, params) {
       /*****************************************************/
       let res = await request('GET', '/artApi/articles', params)
       console.log('get article data:', res)

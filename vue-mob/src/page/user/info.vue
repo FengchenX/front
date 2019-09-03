@@ -8,33 +8,33 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
+    import {mapGetters} from 'vuex'
+
     export default {
         name: 'info',
         data() {
             return {
-              we_chat: '',
-              phone: '',
-              nick: ''
+                we_chat: '',
+                phone: '',
+                nick: ''
             }
         },
         mounted() {
-          this.we_chat = this.info.we_chat
-          this.phone = this.info.telephone
-          this.nick = this.info.nick
+            this.we_chat = this.info.we_chat
+            this.phone = this.info.telephone
+            this.nick = this.info.nick
         },
         computed: {
-          ...mapGetters('me', [
-            'info'
-          ])
+            ...mapGetters('me', [
+                'info'
+            ])
         },
-        watch: {
-        }
+        watch: {}
     }
 </script>
 
 <style scoped lang="stylus">
-#info{
-  line-height 10px;
-}
+  #info {
+    line-height 10px;
+  }
 </style>

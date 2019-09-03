@@ -12,7 +12,7 @@ axios.defaults.headers = {
 }
 /**************************************************************/
 
-export var request = async(type = 'POST', url = '', data = {}, headers = {}) => {
+export var request = async (type = 'POST', url = '', data = {}, headers = {}) => {
   let result
   type = type.toUpperCase()
   // 设置头部
@@ -26,17 +26,17 @@ export var request = async(type = 'POST', url = '', data = {}, headers = {}) => 
   }
   // url = ajaxURL[url]
   if (type === 'GET') {
-      console.log('request**********************GET', url, data)
-      await axios.get(url, { params: data })
+    console.log('request**********************GET', url, data)
+    await axios.get(url, {params: data})
       .then(res => {
-          result = res.data
+        result = res.data
       })
   } else if (type === 'POST') {
     console.log('request**********************POST', url, data)
-      // await axios.post(url, qs.stringify(data))
+    // await axios.post(url, qs.stringify(data))
     await axios.post(url, data)
       .then(res => {
-          result = res.data
+        result = res.data
       })
   } else if (type === 'PUT') {
     console.log('request**********************PUT', url, data)
@@ -47,7 +47,7 @@ export var request = async(type = 'POST', url = '', data = {}, headers = {}) => 
     )
   } else if (type === 'DELETE') {
     console.log('request**************************DELETE', url, data)
-    await axios.delete(url, { params: data })
+    await axios.delete(url, {params: data})
   }
   return result
 }

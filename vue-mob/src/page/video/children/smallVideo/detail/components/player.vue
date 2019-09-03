@@ -3,50 +3,50 @@
     <!-- 信息 -->
     <div class="article_info">
       <h5 class="title">{{videoJson.name}}</h5>
-<!--      <span class="befrom">{{videoJson.befrom}}</span>-->
-<!--      <span class="newstime">{{videoJson.newstime}}</span>-->
+      <!--      <span class="befrom">{{videoJson.befrom}}</span>-->
+      <!--      <span class="newstime">{{videoJson.newstime}}</span>-->
     </div>
     <!-- 视频 -->
-<!--    <template v-if="videoJson.url">-->
-<!--      <div class="article_video">-->
-<!--        <div class="video" :class="{'video-fixed': video_fixed}">-->
-<!--          <template v-if="video_poster">-->
-<!--            <div class="video_info">-->
-<!--              <img :src="videoJson.thumb">-->
-<!--            </div>-->
-<!--            <div class="playRound" @click.stop="videoPlay">-->
-<!--              <div class="playSan"></div>-->
-<!--            </div>-->
-<!--          </template>-->
-<!--          <template v-if="video_ended">-->
-<!--            <div class="video_info">-->
-<!--              <img :src="videoJson.thumb">-->
-<!--            </div>-->
-<!--            <div class="repeat">-->
-<!--              <div class="repeat_round" @click.stop="videoPlay"></div>-->
-<!--              <p class="repeat_text">重播</p>-->
-<!--            </div>-->
-<!--            <div class="black"></div>-->
-<!--          </template>-->
-<!--          <div class="loading" v-show='video_loading'>-->
-<!--            <mt-spinner :type="0" :size='50'></mt-spinner>-->
-<!--          </div>-->
-<!--          <div class="video_box">-->
-<!--            <video ref='video' :controls='!video_poster' :key='videoJson.url'>-->
-<!--              <source :src="videoJson.url" type="video/mp4">-->
-<!--            </video>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </template>-->
-<!--    <video class="player" :src="videoJson.url" controls="controls" style="width: 100%;"></video>-->
+    <!--    <template v-if="videoJson.url">-->
+    <!--      <div class="article_video">-->
+    <!--        <div class="video" :class="{'video-fixed': video_fixed}">-->
+    <!--          <template v-if="video_poster">-->
+    <!--            <div class="video_info">-->
+    <!--              <img :src="videoJson.thumb">-->
+    <!--            </div>-->
+    <!--            <div class="playRound" @click.stop="videoPlay">-->
+    <!--              <div class="playSan"></div>-->
+    <!--            </div>-->
+    <!--          </template>-->
+    <!--          <template v-if="video_ended">-->
+    <!--            <div class="video_info">-->
+    <!--              <img :src="videoJson.thumb">-->
+    <!--            </div>-->
+    <!--            <div class="repeat">-->
+    <!--              <div class="repeat_round" @click.stop="videoPlay"></div>-->
+    <!--              <p class="repeat_text">重播</p>-->
+    <!--            </div>-->
+    <!--            <div class="black"></div>-->
+    <!--          </template>-->
+    <!--          <div class="loading" v-show='video_loading'>-->
+    <!--            <mt-spinner :type="0" :size='50'></mt-spinner>-->
+    <!--          </div>-->
+    <!--          <div class="video_box">-->
+    <!--            <video ref='video' :controls='!video_poster' :key='videoJson.url'>-->
+    <!--              <source :src="videoJson.url" type="video/mp4">-->
+    <!--            </video>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </template>-->
+    <!--    <video class="player" :src="videoJson.url" controls="controls" style="width: 100%;"></video>-->
     <!-- 文字 & 图片 -->
-<!--    <template v-else>-->
-<!--      <section class="article_content">-->
-<!--        <div class="content_html" v-html='video.newstext' :class="{'content_html-close' : content_more}"></div>-->
-<!--        <div class='content_moreBtn' v-if="content_more" @click.stop="content_more = false">展开全文...</div>-->
-<!--      </section>-->
-<!--    </template>-->
+    <!--    <template v-else>-->
+    <!--      <section class="article_content">-->
+    <!--        <div class="content_html" v-html='video.newstext' :class="{'content_html-close' : content_more}"></div>-->
+    <!--        <div class='content_moreBtn' v-if="content_more" @click.stop="content_more = false">展开全文...</div>-->
+    <!--      </section>-->
+    <!--    </template>-->
     <video class="player" :src="videoJson.url" controls="controls" style="width: 100%;"></video>
   </div>
 </template>
@@ -139,6 +139,7 @@
   #article {
     width: 100%;
     position: relative;
+
     .article_info {
       font-size: 12px;
       overflow: hidden;
@@ -146,25 +147,30 @@
       padding: 0 0.427rem 0.4rem;
       border-bottom: 1px solid #eee;
       background: #fff;
+
       .title {
         color: #000;
         font-size: 20px;
         font-weight: bold;
         padding: 0.4rem 0;
       }
+
       .befrom {
         margin-right: 5px;
       }
     }
+
     .article_video {
       width: 100%;
       margin-bottom: 40px;
+
       .video {
         position: relative;
         overflow: hidden;
         width: 100%;
         height: 5.3rem;
       }
+
       .video-fixed {
         position: fixed;
         left: 0;
@@ -172,17 +178,20 @@
         top: 0;
         z-index: 1000;
       }
+
       .video_info {
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         z-index: 111;
+
         img {
           width: 100%;
           height: 5.3rem;
         }
       }
+
       .playRound {
         position: absolute;
         width: 48px;
@@ -195,6 +204,7 @@
         background: rgba(0, 0, 0, .3);
         z-index: 333;
         border: 1px solid #eee;
+
         .playSan {
           position: absolute;
           width: 0;
@@ -209,6 +219,7 @@
           margin-top: -16px;
         }
       }
+
       .loading {
         position: absolute;
         width: 50px;
@@ -219,6 +230,7 @@
         margin-top: -25px;
         z-index: 222;
       }
+
       .repeat {
         position: absolute;
         width: 44px;
@@ -230,12 +242,14 @@
         border-radius: 50%;
         z-index: 444;
         background: #f8f8f8;
+
         .repeat_round {
           width: 44px;
           height: 44px;
           background: url(../../../../../../assets/img/repeat.png) no-repeat center center;
           background-size: 28px;
         }
+
         .repeat_text {
           font-size: 12px;
           color: #fff;
@@ -243,6 +257,7 @@
           margin-top: 4px;
         }
       }
+
       .black {
         position: absolute;
         left: 0;
@@ -252,6 +267,7 @@
         height: 200px;
         background: rgba(0, 0, 0, .3);
       }
+
       .video_box {
         position: absolute;
         top: 0;
@@ -260,6 +276,7 @@
         overflow: hidden;
         text-align: center;
         height: 5.3rem;
+
         video {
           width: 100%;
         }

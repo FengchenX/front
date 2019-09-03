@@ -34,7 +34,7 @@
 
 <script>
     // import VideoSwipe from './components/videoSwipe'
-export default {
+    export default {
         name: 'myVideo',
         data() {
             return {
@@ -42,8 +42,7 @@ export default {
             }
         },
         components: {},
-        methods: {
-        }
+        methods: {}
     }
 </script>
 

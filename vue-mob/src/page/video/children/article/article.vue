@@ -13,7 +13,8 @@
 </template>
 
 <script>
-  import pullContainer from './components/pullContainer'
+    import pullContainer from './components/pullContainer'
+
     export default {
         // name: 'article'
         data() {
@@ -28,13 +29,14 @@
 </script>
 
 <style scoped lang="stylus">
-#myArticle{
-  height 100%
-  overflow auto
-  header {
-    background: #fff;
-    color: #333;
-    font-size: 16px;
+  #myArticle {
+    height 100%
+    overflow auto
+
+    header {
+      background: #fff;
+      color: #333;
+      font-size: 16px;
+    }
   }
-}
 </style>

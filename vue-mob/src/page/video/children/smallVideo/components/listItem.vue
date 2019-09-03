@@ -1,12 +1,13 @@
 <template>
-    <ul class="listItem">
-      <item v-for="section in itemJson" :section="section"></item>
-    </ul>
+  <ul class="listItem">
+    <item v-for="section in itemJson" :section="section"></item>
+  </ul>
 </template>
 
 <script>
     import Item from './item'
-export default {
+
+    export default {
         name: 'listItem2',
         components: {Item},
         props: ['itemJson']

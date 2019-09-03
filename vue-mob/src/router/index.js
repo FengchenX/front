@@ -4,9 +4,9 @@ import App from '../App'
 
 Vue.use(Router)
 
-Router.prototype.go = function() {
-    this.isBack = true
-    window.history.go(-1)
+Router.prototype.go = function () {
+  this.isBack = true
+  window.history.go(-1)
 }
 
 // 路由懒加载
@@ -41,7 +41,7 @@ export default new Router({
       /***********************************************/
       component: App,
       children: [
-          /****************************************************/
+        /****************************************************/
         {
           path: '/index2',
           component: index2
@@ -77,33 +77,33 @@ export default new Router({
           path: '/test',
           component: test
         },
-          /****************************************************/
-          // index页面
-          {
-              name: 'index',
-              path: '/index',
-              component: index,
-              children: [
-                  // channel页面
-                  {
-                      name: 'channel',
-                      path: 'channel',
-                      component: channel
-                  }
-              ]
-          },
-          // detail页面
-          {
-              name: 'detail',
-              path: '/detail',
-              component: detail
-          },
-          // search页面
-          {
-              name: 'search',
-              path: '/search',
-              component: search
-          }
+        /****************************************************/
+        // index页面
+        {
+          name: 'index',
+          path: '/index',
+          component: index,
+          children: [
+            // channel页面
+            {
+              name: 'channel',
+              path: 'channel',
+              component: channel
+            }
+          ]
+        },
+        // detail页面
+        {
+          name: 'detail',
+          path: '/detail',
+          component: detail
+        },
+        // search页面
+        {
+          name: 'search',
+          path: '/search',
+          component: search
+        }
       ]
     }
   ]

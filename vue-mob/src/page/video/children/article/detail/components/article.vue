@@ -18,7 +18,8 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
+    import {mapActions} from 'vuex'
+
     export default {
         name: 'article',
         props: ['json'],
@@ -65,66 +66,77 @@
 
 <style scoped lang="stylus">
   #article {
-    padding:0 17px;
+    padding: 0 17px;
     background-color: #f8f8f8;
-    .title{
+
+    .title {
       font-size 25px;
       padding-top 16px;
       line-height 34px;
       font-weight bolder;
       color #222;
     }
-    .information{
+
+    .information {
       margin-top 12px;
       position relative;
-      .userLogo{
+
+      .userLogo {
         height 32px;
         width 32px;
         border-radius 32px;
         overflow hidden;
         float: left;
-        img{
+
+        img {
           width: 30px;
           height: 30px;
         }
       }
-      .userName{
-        font-size:12px;
-        line-height:16px;
+
+      .userName {
+        font-size: 12px;
+        line-height: 16px;
         margin-left: 40px;
-        .name{
+
+        .name {
           color: #406599
         }
-        .time{
+
+        .time {
           color: #999;
         }
-        img{
+
+        img {
           width: 15px;
           height: 15px;
         }
       }
-      .about{
-        background-color:#2a90d7;
+
+      .about {
+        background-color: #2a90d7;
         border: none;
         border-radius: 5px;
-        color:#fff;
+        color: #fff;
         letter-spacing: 5px;
         text-decoration: none;
-        width:72px;
-        height:28px;
-        line-height:28px;
+        width: 72px;
+        height: 28px;
+        line-height: 28px;
         text-align: center;
-        position:absolute;
-        top:50%;
+        position: absolute;
+        top: 50%;
         margin-top: -14px;
-        right:0px;
+        right: 0px;
         font-size small;
       }
     }
+
     .content {
       padding-top: 24px;
-      max-height:500px;
+      max-height: 500px;
       overflow: hidden;
+
       h2 {
         font-size: 18px;
         border-left-width: 3px;
@@ -133,22 +145,26 @@
         line-height: 28px;
         margin: 12px 0;
       }
+
       p {
-        margin-bottom:24px;
+        margin-bottom: 24px;
         word-wrap: break-word;
         font-size: 18px;
         line-height: 28px;
         color: #333;
       }
     }
-    .more{
+
+    .more {
       max-height 545px;
       overflow: scroll;
-      &::-webkit-scrollbar{
+
+      &::-webkit-scrollbar {
         display none
       }
     }
-    .moreContent{
+
+    .moreContent {
       margin-top: 22px;
       text-align: center;
       height: 20px;
