@@ -1,6 +1,6 @@
 <template>
   <ul class="listItem">
-    <item v-for="section in itemJson" :section="section"></item>
+    <item v-for="(section, key) in itemJson" :section="section" :key="key"></item>
   </ul>
 </template>
 
