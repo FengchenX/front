@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import index_module from './index/index'
 import detail_module from './detail/index'
-import search_module from './search/index'
+import search_module from './search/index2'
 /******************************************************/
 import comments_module from './detail/comments'
 import smallVideo_module from './video/smallVideo/index'

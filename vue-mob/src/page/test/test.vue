@@ -37,17 +37,22 @@
 
 <script>
     import cache from '@/utils/cache'
-
+    import { mapActions } from 'vuex'
     export default {
         name: 'test',
         data() {
             return {
                 myData: [],
                 keyword: '',
-                now: 0
+                now: 0,
+                pageNum: 1,
+                pageSize: 10
             }
         },
         methods: {
+            ...mapActions('search', [
+                'get_search_data'
+            ]),
             // &event是实参，表示event对象
             get: function (ev) {
                 // 如果按得键是上或者下，就不进行ajax
@@ -70,6 +75,7 @@
                         this.myData = []
                         break
                 }
+                this.get_search_data({ key: this.keyword, page: {} })
             },
             selectDown: function () {
                 this.now++
