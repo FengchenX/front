@@ -18,8 +18,8 @@ export default {
     // 添加评论数据数据
     async post_comments_data({commit, state}, {id, user, content}) {
       // state.toComment = {id, user, content}
-      let url = `/videoApi/videos/${id}/comments`
-      let params = {user: cache.getLocal('userID'), content, to_user: user}
+      let url = `/commentApi/comments`
+      let params = {user: cache.getLocal('userID'), content, to_user: user, type: 'short-video', target: id}
       await request('POST', url, params)
         .then(json => {
           if (json.code !== 0) {
@@ -33,7 +33,7 @@ export default {
     // 获取评论数据
     async get_comments_data({commit, state}, {id}) {
       let res
-      let url = `/videoApi/videos/${id}/comments`
+      let url = `/commentApi/comments?type=short-video&target=${id}`
       await request('GET', url)
         .then(json => {
           res = json.data

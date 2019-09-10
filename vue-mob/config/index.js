@@ -38,6 +38,13 @@ module.exports = {
             pathRewrite: {
               '^/authApi': ''
             }
+          },
+          '/commentApi': {
+            target: 'http://localhost:8089',
+            changeOrigin: true,
+            pathRewrite: {
+              '^/commentApi': ''
+            }
           }
         },
 
