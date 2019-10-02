@@ -1,8 +1,8 @@
 {
   "name": "vue-mob",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "uncleLian <771674109@qq.com> https://github.com/uncleLian",
+  "description": "agfun front",
+  "author": "feng",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -76,5 +76,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.html",
+  "repository": "https://gitee.com/FengchenX/front.git",
+  "license": "MIT"
 }
